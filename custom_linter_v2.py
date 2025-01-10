@@ -12,16 +12,14 @@ def check_black_lines_blocks(file_path):
 
         for i in range(2, len(lines)):
 
-            if re.match(r'^\s*(def|if|for)', lines[i]):
+            if re.match(r'^\s*(class|def|if|for)', lines[i]):
                 if not re.match(r'^\s*$', lines[i -1]) or not re.match(r'^\s*$', lines[i - 2]):
                     print(f"{file_path}:{i:1}: Expected 2 blank lines")
                     errors += 1
                 
                 elif re.match(r'^\s*$', lines[i -3]):
-                    print(f"{file_path}:{i:1}: Too mamy lines (more than 2)")
+                    print(f"{file_path}:{i:1}: To mamy lines (more than 2)")
                     errors += 1
-
-    return errors
 
 
 
@@ -30,7 +28,7 @@ def lin_directory(directory):
 
     for root, _, files in os.walk(directory):
         for file in files:
-            if file.endswith('.py'):
+            if file.endswitch('.py'):
                 file_path = os.path.join(root, file)
                 total_errors += check_black_lines_blocks(file_path)
 
