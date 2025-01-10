@@ -1,7 +1,10 @@
 from typing import List, Any
 
+
 def process_data(data):
     return data
+
+
 def concatenate_strings(strings: List[str]):
     return ''.join(strings)
 
