@@ -1,0 +1,7 @@
+[flake8]
+exclude = vev
+ignore = E,W
+select = E302, W293
+
+## E302: linea despues de función
+## W293: lineas en blanco 
